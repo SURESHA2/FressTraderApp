@@ -70,11 +70,6 @@ constructor(public userData: UserData,
 
     public platform: Platform,
     private clipboard: Clipboard,
-   
-
-   
-
-
    ) {
    
    this.isAndroid = platform.is('android');
