@@ -37,8 +37,8 @@ UserId: UserEmailId = { email: '' };
    // debugger;  
 
   // this.io.sails.url = this._setupService.endpoint_url;
-this.io.sails.url = "http://192.168.0.125:3000"; 
-//this.io.sails.url = "http://localhost:3000"; 
+//this.io.sails.url = "http://192.168.0.125:3000"; 
+this.io.sails.url = "http://localhost:3000"; 
 
        this.userdata();
 
