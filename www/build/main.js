@@ -219,7 +219,7 @@ var SetupService = (function () {
     function SetupService(http) {
         this.http = http;
         // endpoint_url : string = 'http://198.187.28.200:3000';
-        //endpoint_url :string='http://192.168.0.125:3000';
+        // endpoint_url :string='http://192.168.0.139:3000';
         this.endpoint_url = 'http://localhost:3000';
         this.http = http;
         console.log('Hello ServicesProvider Provider');
@@ -954,7 +954,7 @@ var ChatroomPage = (function () {
         };
         this.myInfo = this.messages[0];
         // this.io.sails.url = this._setupService.endpoint_url;
-        //this.io.sails.url = "http://192.168.0.125:3000"; 
+        //this.io.sails.url = "http://192.168.0.139:3000"; 
         this.io.sails.url = "http://localhost:3000";
         this.userdata();
         this.messageDetails.sender = this.UserId.email;
@@ -2829,7 +2829,7 @@ var DashboardPage = (function () {
         this.userEmail = { email: '' };
         this.btcValue = { email: '', buyRate: '', currencyType: '', volume: '', sellRate: '' };
         this.inrValue = { email: '', buyRate: '', currencyType: '', volume: '', sellRate: '' };
-        // this.io.sails.url = "http://192.168.0.125:3000";  
+        //this.io.sails.url = "http://192.168.0.139:3000";  
         this.io.sails.url = "http://localhost:3000";
         this.userdata();
         this.getCurrencyPrice();
