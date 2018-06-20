@@ -18,8 +18,9 @@ export class SetupService {
 
      // endpoint_url : string = 'http://198.187.28.200:3000';
 
-   // endpoint_url :string='http://192.168.0.139:3000';
-    endpoint_url :string='http://localhost:3000';
+    endpoint_url :string="http://103.201.142.41:3005";
+    //endpoint_url= "http://192.168.0.122:3005";
+    //endpoint_url :string='http://localhost:3000';
 
 
   

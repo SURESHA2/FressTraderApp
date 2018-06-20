@@ -49,7 +49,7 @@ export class WalletPage {
    public stxbalance:any;
    public stxaddress:any;
    public address:any;
-    public Address:any;
+   public Address:any;
    public tx:any[]=[];
    public stxtx:any;
 

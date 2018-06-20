@@ -40,8 +40,9 @@ export class DashboardPage {
     public navParams: NavParams,
     public _setupService: SetupService) { 
    
-  //this.io.sails.url = "http://192.168.0.139:3000";  
- this.io.sails.url = "http://localhost:3000";
+  this.io.sails.url = "http://103.201.142.41:3005"; 
+  //this.io.sails.url = "http://192.168.0.122:3005";
+   //this.io.sails.url = "http://localhost:3000";
     this.userdata();
     this.getCurrencyPrice(); 
     this.getCurrentPosition();  

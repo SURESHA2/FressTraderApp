@@ -219,11 +219,12 @@ var SetupService = (function () {
     function SetupService(http) {
         this.http = http;
         // endpoint_url : string = 'http://198.187.28.200:3000';
-        // endpoint_url :string='http://192.168.0.139:3000';
-        this.endpoint_url = 'http://localhost:3000';
+        this.endpoint_url = "http://103.201.142.41:3005";
         this.http = http;
         console.log('Hello ServicesProvider Provider');
     }
+    //endpoint_url= "http://192.168.0.122:3005";
+    //endpoint_url :string='http://localhost:3000';
     // help page
     SetupService.prototype.createHelpDetail = function (helpdetails) {
         var response = this.http.post(this.endpoint_url + '/help/helpUser', helpdetails).map(function (res) { return res.json(); });
@@ -368,9 +369,10 @@ var SetupService = (function () {
     };
     SetupService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
     ], SetupService);
     return SetupService;
+    var _a;
 }());
 
 //# sourceMappingURL=setup.services.js.map
@@ -954,8 +956,9 @@ var ChatroomPage = (function () {
         };
         this.myInfo = this.messages[0];
         // this.io.sails.url = this._setupService.endpoint_url;
-        //this.io.sails.url = "http://192.168.0.139:3000"; 
-        this.io.sails.url = "http://localhost:3000";
+        this.io.sails.url = "http://103.201.142.41:3005";
+        //this.io.sails.url = "http://192.168.0.122:3005";
+        //this.io.sails.url = "http://localhost:3000"; 
         this.userdata();
         this.messageDetails.sender = this.UserId.email;
         this.nickname = this.messageDetails.sender;
@@ -1016,21 +1019,17 @@ var ChatroomPage = (function () {
         });
     };
     ChatroomPage.prototype.ionViewWillLeave = function () {
-        this.io.socket.disconnect();
+        //this.io.socket.disconnect();
         delete this.io.sails;
     };
     ChatroomPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-chat-room',template:/*ion-inline-start:"F:\Ionic_Project\StreetxTrader_App\src\pages\chatroom\chatroom.html"*/'\n\n\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>{{messageDetails.recipient}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row *ngFor="let message of messages "> \n\n \n\n\n\n\n\n      <ion-col offset-3 col-9 *ngIf="message.sender !== nickname" class="message" [ngClass]="{\'my_message\': message.sender === nickname, \'other_message\': message.sender !== nickname}">\n\n        <span class="user_name">{{ message.sender }}</span><br>\n\n        <span>{{ message.content }}</span>\n\n      <div class="time">{{message.createdAt | date:\'hh:MM\'}}</div> \n\n      </ion-col>\n\n      <ion-col col-9 *ngIf="message.sender === nickname" class="message" [ngClass]="{\'my_message\': message.sender === nickname, \'other_message\': message.sender !== nickname}">\n\n        <span class="user_name">{{ message.sender }}</span><br>\n\n        <span>{{ message.content }}</span>\n\n   <div class="time">{{message.createdAt | date:\'hh:MM\'}}</div>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-row class="message_row">\n\n      <ion-col col-9>\n\n        <ion-item no-lines>\n\n          <ion-input type="text" placeholder="type your message here..." [(ngModel)]="userContent"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-3>\n\n        <button ion-button clear class="button-color" (click)="sendMessage()" [disabled]="userContent ==\'\'">\n\n        Send\n\n      </button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"F:\Ionic_Project\StreetxTrader_App\src\pages\chatroom\chatroom.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_setup_services__["a" /* SetupService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__providers_setup_services__["a" /* SetupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_setup_services__["a" /* SetupService */]) === "function" && _f || Object])
     ], ChatroomPage);
     return ChatroomPage;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=chatroom.js.map
@@ -2829,8 +2828,9 @@ var DashboardPage = (function () {
         this.userEmail = { email: '' };
         this.btcValue = { email: '', buyRate: '', currencyType: '', volume: '', sellRate: '' };
         this.inrValue = { email: '', buyRate: '', currencyType: '', volume: '', sellRate: '' };
-        //this.io.sails.url = "http://192.168.0.139:3000";  
-        this.io.sails.url = "http://localhost:3000";
+        this.io.sails.url = "http://103.201.142.41:3005";
+        //this.io.sails.url = "http://192.168.0.122:3005";
+        //this.io.sails.url = "http://localhost:3000";
         this.userdata();
         this.getCurrencyPrice();
         this.getCurrentPosition();
@@ -2952,16 +2952,10 @@ var DashboardPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-dashboard',template:/*ion-inline-start:"F:\Ionic_Project\StreetxTrader_App\src\pages\dashboard\dashboard.html"*/'<!--\n\n  Generated template for the DashboardPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n     <!--  <img style="width: 50%;" src="../assets/img/menu-icon.png"> -->\n\n    </button>\n\n    <ion-title>Dashboard</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n    <div class="mycontant">\n\n      <ion-label class="mylabel">\n\n        <ion-row class="row my-f-row" justify-content-center="">\n\n            <ion-col class="col" col-5="">\n\n              <span class="my-font-a">BTC Vol</span>\n\n            </ion-col>\n\n            <ion-col class="col my-font-c" col-5="">\n\n              <span>{{cexdata}}</span>\n\n            </ion-col>\n\n        </ion-row>\n\n        <ion-row class="row" justify-content-center="">\n\n            <ion-col class="col" col-5="">\n\n              <span class="my-font-a">STX Vol</span>\n\n            </ion-col>\n\n            <ion-col class="col my-font-c" col-5="">\n\n              <span>{{zebPayData}}</span>\n\n            </ion-col>\n\n        </ion-row>\n\n      </ion-label> \n\n    </div>\n\n  <!-- <div class="my-refresh-btn">\n\n     <a href="#"><img src="../assets/img/refresh-btn.png"></a>\n\n  </div>  -->\n\n\n\n  <div class="update-l">\n\n    <ion-row class="logo" text-center>\n\n         <br>\n\n     <ion-col col-12><h3 class="text_Color"><strong>Update</strong></h3></ion-col>\n\n  </ion-row>\n\n  </div>\n\n   \n\n\n\n  <form #btcForm="ngForm" novalidate>\n\n    <ion-grid>\n\n      <ion-row> <h3 class="text_Color" style="margin-top: 5px"><strong>BTC</strong></h3></ion-row>\n\n          <ion-row no-lines class="form-input-fields">\n\n            <ion-col col-4>\n\n          <ion-input [(ngModel)]="btcValue.buyRate"  placeholder="buy" name="buyRate" type="text" #buyRate="ngModel" spellcheck="false" autocapitalize="off" class="login-input" >\n\n        </ion-input>\n\n            </ion-col>\n\n            <ion-col col-4>\n\n         <ion-input [(ngModel)]="btcValue.sellRate" placeholder="sell" name="sellRate" type="text" #sellRate="ngModel"  class="login-input" >\n\n        </ion-input>\n\n            </ion-col>\n\n            <ion-col col-4>\n\n            <ion-input [(ngModel)]="btcValue.volume" placeholder="volume" name="volume" type="text" #volume="ngModel"  class="login-input" >\n\n        </ion-input>\n\n            </ion-col>\n\n         </ion-row>\n\n        <ion-row responsive-sm>\n\n        <ion-col >\n\n          <button class="button-backcolor" style="margin-top: 14px" ion-button (click)="updateBTC(btcForm)" type="submit" block>update</button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <br><br>\n\n    </ion-grid>\n\n  </form>\n\n\n\n    <form #inrForm="ngForm" novalidate>\n\n          <ion-grid>\n\n         <ion-row> <ion-row> <h3 class="text_Color" style="margin-top: 5px"><strong>STX</strong></h3></ion-row></ion-row>\n\n          <ion-row no-lines class="form-input-fields">\n\n            <ion-col col-4>\n\n          <ion-input [(ngModel)]="inrValue.buyRate"  placeholder="buy"name="buyRate" type="text" #buyRate="ngModel" spellcheck="false" autocapitalize="off" class="login-input" >\n\n        </ion-input>\n\n            </ion-col>\n\n            <ion-col col-4>\n\n         <ion-input [(ngModel)]="inrValue.sellRate" placeholder="sell" name="sellRate" type="text" #sellRate="ngModel"  class="login-input" >\n\n        </ion-input>\n\n            </ion-col>\n\n            <ion-col col-4>\n\n            <ion-input [(ngModel)]="inrValue.volume" placeholder="volume" name="volume" type="text" #volume="ngModel"  class="login-input" >\n\n        </ion-input>\n\n            </ion-col>\n\n         </ion-row>\n\n       <ion-row responsive-sm>\n\n        <ion-col >\n\n          <button class="button-backcolor" style="margin-top: 14px" ion-button (click)="updateSTX(inrForm)" type="submit" block>update</button>\n\n        </ion-col>\n\n      </ion-row>\n\n      </ion-grid>\n\n    \n\n\n\n\n\n  </form>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"F:\Ionic_Project\StreetxTrader_App\src\pages\dashboard\dashboard.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_setup_services__["a" /* SetupService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__providers_setup_services__["a" /* SetupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_setup_services__["a" /* SetupService */]) === "function" && _h || Object])
     ], DashboardPage);
     return DashboardPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h;
 }());
 
 //# sourceMappingURL=dashboard.js.map

@@ -37,8 +37,9 @@ UserId: UserEmailId = { email: '' };
    // debugger;  
 
   // this.io.sails.url = this._setupService.endpoint_url;
-//this.io.sails.url = "http://192.168.0.139:3000"; 
-this.io.sails.url = "http://localhost:3000"; 
+this.io.sails.url = "http://103.201.142.41:3005";
+//this.io.sails.url = "http://192.168.0.122:3005";
+//this.io.sails.url = "http://localhost:3000"; 
 
        this.userdata();
 
@@ -117,7 +118,7 @@ sendMessage() {
   }
   
  ionViewWillLeave() {
-   this.io.socket.disconnect();
+   //this.io.socket.disconnect();
    delete this.io.sails;
   }
 
